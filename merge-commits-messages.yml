@@ -1,0 +1,17 @@
+name: merge-commits-messages
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - 'production'
+
+jobs:
+  commits_to_pr_job:
+    runs-on: ubuntu-latest
+    name: get-pr-commits
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get PR Commits & Update description
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        run: npm start

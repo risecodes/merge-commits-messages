@@ -1,20 +1,11 @@
-name: 'get-pr-commits'
-description: 'A GitHub Action that get commits in current pull-request'
+name: 'merge-commits-messages'
+description: 'A GitHub Action that get commits in current pull-request and write it to PR description'
 inputs:
   token:
     description: 'A token with access to your repository scoped in as a secret'
     required: true
-  filter_out_pattern:
-    description: 'A regex pattern to check if a commit should be filtered out, empty for disable'
-    required: false
-    default: ""
-  filter_out_flags:
-    description: 'Regex flags of input filter_out_pattern'
-    required: false
-    default: ''
-outputs:
-  commits:
-    description: 'commits in pr'
+    default: ${{ secrets.GITHUB_TOKEN }}
+
 runs:
-  using: 'node16'
-  main: 'index.js'
+  using: 'node20'
+  main: 'dist/index.js'
