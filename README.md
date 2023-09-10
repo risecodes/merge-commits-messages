@@ -30,8 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     name: get-pr-commits
     steps:
+      - name: Checkout
       - uses: actions/checkout@v3
       - name: Get PR Commits & Update description
+      - uses: risecodes/merge-commits-messages@main
         with:
           repository: risecodes/merge-commits-messages
           token: ${{ secrets.GITHUB_TOKEN }}
