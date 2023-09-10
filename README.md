@@ -33,6 +33,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: Get PR Commits & Update description
         with:
+          repository: risecodes/merge-commits-messages
           token: ${{ secrets.GITHUB_TOKEN }}
         run: npm start
 ```
