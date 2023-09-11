@@ -31,11 +31,9 @@ jobs:
     name: get-pr-commits
     steps:
       - name: Checkout
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: Get PR Commits & Update description
-      - uses: risecodes/merge-commits-messages@main
+        uses: risecodes/merge-commits-messages@main
         with:
-          repository: risecodes/merge-commits-messages
-          token: ${{ secrets.GITHUB_TOKEN }}
-        run: npm start
+          token: ${{ secrets.ACCESS_TOKEN_GITHUB }}
 ```
