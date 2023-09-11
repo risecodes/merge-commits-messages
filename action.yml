@@ -3,7 +3,7 @@ description: 'A GitHub Action that get commits in current pull-request and write
 inputs:
   token:
     description: 'A token with access to your repository scoped in as a secret'
-    required: false
+    required: true
 runs:
   using: 'node20'
   main: 'dist/index.js'
