@@ -4,8 +4,6 @@ inputs:
   token:
     description: 'A token with access to your repository scoped in as a secret'
     required: false
-    default: ${{ secrets.ACCESS_TOKEN_GITHUB }}
-
 runs:
   using: 'node20'
   main: 'dist/index.js'
