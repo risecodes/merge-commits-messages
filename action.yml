@@ -3,8 +3,8 @@ description: 'A GitHub Action that get commits in current pull-request and write
 inputs:
   token:
     description: 'A token with access to your repository scoped in as a secret'
-    required: true
-    default: ${{ secrets.GITHUB_TOKEN }}
+    required: false
+    default: ${{ secrets.ACCESS_TOKEN_GITHUB }}
 
 runs:
   using: 'node20'
