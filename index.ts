@@ -57,7 +57,7 @@ async function main() {
     });
 
   } catch (error: any) {
-    core.setFailed(error.message);
+    core.error(error.message)
   }
 }
 
